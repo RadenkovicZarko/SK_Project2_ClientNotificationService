@@ -52,6 +52,8 @@ public class EmailListener {
             emailText=emailText.replaceFirst("%dateFrom",String.valueOf(universalEmailDto.getFrom()));
         if(notificationTypeDto.isDateTo())
             emailText=emailText.replaceFirst("%dateTo",String.valueOf(universalEmailDto.getTo()));
+        if(notificationTypeDto.isPassword())
+            emailText=emailText.replaceFirst("%password",String.valueOf(universalEmailDto.getPassword()));
 
         System.out.println(emailText+" "+universalEmailDto.getEmailOfClient());
         emailService.sendSimpleMessage(universalEmailDto.getEmailOfClient(), "subject", emailText);

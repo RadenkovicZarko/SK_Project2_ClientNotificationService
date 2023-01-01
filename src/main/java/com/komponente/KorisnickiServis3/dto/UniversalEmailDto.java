@@ -1,5 +1,4 @@
 package com.komponente.KorisnickiServis3.dto;
-
 import java.util.Date;
 
 public class UniversalEmailDto {
@@ -15,6 +14,26 @@ public class UniversalEmailDto {
     private Date from=null;
     private Date to=null;
     private String emailOfManager="";
+    private String password;
+
+    public UniversalEmailDto() {
+    }
+
+    public UniversalEmailDto(String nameOfClass, String emailOfClient, String name, String lastName, String link) {
+        this.nameOfClass = nameOfClass;
+        this.emailOfClient = emailOfClient;
+        this.name = name;
+        this.lastName = lastName;
+        this.link = link;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getEmailOfClient() {
         return emailOfClient;

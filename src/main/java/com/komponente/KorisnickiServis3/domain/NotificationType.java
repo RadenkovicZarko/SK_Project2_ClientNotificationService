@@ -24,11 +24,13 @@ public class NotificationType {
     private boolean dateTo;
     private boolean emailOfManager;
     private String text;
+    private boolean password;
 
     public NotificationType() {
     }
 
-    public NotificationType( String nameOfClass, boolean name, boolean lastName, boolean link, boolean idVehicle, boolean model, boolean typeOfVehicle, boolean dateFrom, boolean dateTo, boolean emailOfManager, String text) {
+    public NotificationType(Long id, String nameOfClass, boolean name, boolean lastName, boolean link, boolean idVehicle, boolean model, boolean typeOfVehicle, boolean dateFrom, boolean dateTo, boolean emailOfManager, String text, boolean password) {
+        this.id = id;
         this.nameOfClass = nameOfClass;
         this.name = name;
         this.lastName = lastName;
@@ -40,6 +42,15 @@ public class NotificationType {
         this.dateTo = dateTo;
         this.emailOfManager = emailOfManager;
         this.text = text;
+        this.password = password;
+    }
+
+    public boolean isPassword() {
+        return password;
+    }
+
+    public void setPassword(boolean password) {
+        this.password = password;
     }
 
     public Long getId() {

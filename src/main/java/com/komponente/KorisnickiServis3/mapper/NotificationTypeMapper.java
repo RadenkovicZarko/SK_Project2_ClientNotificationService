@@ -24,6 +24,7 @@ public class NotificationTypeMapper {
         notificationTypeDto.setDateTo(notificationType.isDateTo());
         notificationTypeDto.setEmailOfManager(notificationType.isEmailOfManager());
         notificationTypeDto.setText(notificationType.getText());
+        notificationTypeDto.setPassword(notificationType.isPassword());
         return notificationTypeDto;
     }
 

@@ -11,7 +11,16 @@ public class NotificationTypeDto {
     private boolean dateFrom;
     private boolean dateTo;
     private boolean emailOfManager;
+    private boolean password;
     private String text;
+
+    public boolean isPassword() {
+        return password;
+    }
+
+    public void setPassword(boolean password) {
+        this.password = password;
+    }
 
     public String getNameOfClass() {
         return nameOfClass;

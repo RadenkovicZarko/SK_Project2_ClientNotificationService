@@ -24,7 +24,7 @@ public class Notification {
     private Date dateTo;
     private String emailOfManager;
     private String text;
-
+    private String password;
     public Notification() {
     }
 
@@ -41,6 +41,14 @@ public class Notification {
         this.dateTo = to;
         this.emailOfManager = emailOfManager;
         this.text = text;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Long getId() {
