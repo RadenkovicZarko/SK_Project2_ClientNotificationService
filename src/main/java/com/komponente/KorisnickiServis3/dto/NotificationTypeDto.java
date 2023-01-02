@@ -1,6 +1,7 @@
 package com.komponente.KorisnickiServis3.dto;
 
 public class NotificationTypeDto {
+    private Long id;
     private String nameOfClass;
     private boolean name;
     private boolean lastName;
@@ -13,6 +14,14 @@ public class NotificationTypeDto {
     private boolean emailOfManager;
     private boolean password;
     private String text;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public boolean isPassword() {
         return password;

@@ -1,9 +1,6 @@
 package com.komponente.KorisnickiServis3.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,9 +8,10 @@ public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne
+    private NotificationType notificationType;
 
     private String emailOfClient;
-    private String nameOfClass;
     private String name;
     private String lastName;
     private String link;
@@ -23,24 +21,35 @@ public class Notification {
     private Date dateFrom;
     private Date dateTo;
     private String emailOfManager;
-    private String text;
     private String password;
+    private String text;
+
     public Notification() {
     }
 
-    public Notification(String emailOfClient, String nameOfClass, String name, String lastName, String link, Long idVehicle, String model, String typeOfVehicle, Date from, Date to, String emailOfManager, String text) {
+    public Notification(Long id, NotificationType notificationType, String emailOfClient, String name, String lastName, String link, Long idVehicle, String model, String typeOfVehicle, Date dateFrom, Date dateTo, String emailOfManager, String password, String text) {
+        this.id = id;
+        this.notificationType = notificationType;
         this.emailOfClient = emailOfClient;
-        this.nameOfClass = nameOfClass;
         this.name = name;
         this.lastName = lastName;
         this.link = link;
         this.idVehicle = idVehicle;
         this.model = model;
         this.typeOfVehicle = typeOfVehicle;
-        this.dateFrom = from;
-        this.dateTo = to;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
         this.emailOfManager = emailOfManager;
+        this.password = password;
         this.text = text;
+    }
+
+    public NotificationType getNotificationType() {
+        return notificationType;
+    }
+
+    public void setNotificationType(NotificationType notificationType) {
+        this.notificationType = notificationType;
     }
 
     public String getPassword() {
@@ -65,14 +74,6 @@ public class Notification {
 
     public void setEmailOfClient(String emailOfClient) {
         this.emailOfClient = emailOfClient;
-    }
-
-    public String getNameOfClass() {
-        return nameOfClass;
-    }
-
-    public void setNameOfClass(String nameOfClass) {
-        this.nameOfClass = nameOfClass;
     }
 
     public String getName() {
