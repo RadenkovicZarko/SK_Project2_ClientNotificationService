@@ -11,53 +11,36 @@ public class Notification {
     @ManyToOne
     private NotificationType notificationType;
 
-    private String emailOfClient;
-    private String name;
-    private String lastName;
-    private String link;
-    private Long idVehicle;
-    private String model;
-    private String typeOfVehicle;
-    private Date dateFrom;
-    private Date dateTo;
-    private String emailOfManager;
-    private String password;
+    private String email;
+    //private String name;
+    //private String lastName;
+    //private String link;
+    //private Long idVehicle;
+    //private String model;
+    //private String typeOfVehicle;
+    //private Date dateFrom;
+    //private Date dateTo;
+    //private String emailOfManager;
+    //private String password;
     private String text;
+    private Date dateOfSending;
 
     public Notification() {
     }
 
-    public Notification(Long id, NotificationType notificationType, String emailOfClient, String name, String lastName, String link, Long idVehicle, String model, String typeOfVehicle, Date dateFrom, Date dateTo, String emailOfManager, String password, String text) {
+    public Date getDateOfSending() {
+        return dateOfSending;
+    }
+
+    public void setDateOfSending(Date dateOfSending) {
+        this.dateOfSending = dateOfSending;
+    }
+
+    public Notification(Long id, NotificationType notificationType, String email, String text) {
         this.id = id;
         this.notificationType = notificationType;
-        this.emailOfClient = emailOfClient;
-        this.name = name;
-        this.lastName = lastName;
-        this.link = link;
-        this.idVehicle = idVehicle;
-        this.model = model;
-        this.typeOfVehicle = typeOfVehicle;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
-        this.emailOfManager = emailOfManager;
-        this.password = password;
+        this.email = email;
         this.text = text;
-    }
-
-    public NotificationType getNotificationType() {
-        return notificationType;
-    }
-
-    public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Long getId() {
@@ -68,85 +51,22 @@ public class Notification {
         this.id = id;
     }
 
-    public String getEmailOfClient() {
-        return emailOfClient;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailOfClient(String emailOfClient) {
-        this.emailOfClient = emailOfClient;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public NotificationType getNotificationType() {
+        return notificationType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNotificationType(NotificationType notificationType) {
+        this.notificationType = notificationType;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public Long getIdVehicle() {
-        return idVehicle;
-    }
-
-    public void setIdVehicle(Long idVehicle) {
-        this.idVehicle = idVehicle;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getTypeOfVehicle() {
-        return typeOfVehicle;
-    }
-
-    public void setTypeOfVehicle(String typeOfVehicle) {
-        this.typeOfVehicle = typeOfVehicle;
-    }
-
-    public Date getDateFrom() {
-        return dateFrom;
-    }
-
-    public void setDateFrom(Date dateFrom) {
-        this.dateFrom = dateFrom;
-    }
-
-    public Date getDateTo() {
-        return dateTo;
-    }
-
-    public void setDateTo(Date dateTo) {
-        this.dateTo = dateTo;
-    }
-
-    public String getEmailOfManager() {
-        return emailOfManager;
-    }
-
-    public void setEmailOfManager(String emailOfManager) {
-        this.emailOfManager = emailOfManager;
-    }
 
     public String getText() {
         return text;

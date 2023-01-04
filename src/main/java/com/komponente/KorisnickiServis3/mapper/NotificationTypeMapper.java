@@ -2,6 +2,7 @@ package com.komponente.KorisnickiServis3.mapper;
 
 
 import com.komponente.KorisnickiServis3.domain.NotificationType;
+import com.komponente.KorisnickiServis3.dto.NotificationTypeCreateDto;
 import com.komponente.KorisnickiServis3.dto.NotificationTypeDto;
 import com.komponente.KorisnickiServis3.repository.NotificationRepository;
 import com.komponente.KorisnickiServis3.service.NotificationTypeService;
@@ -46,5 +47,24 @@ public class NotificationTypeMapper {
         notificationType.setPassword(notificationTypeDto.isPassword());
         return notificationType;
     }
+    public NotificationType notificationTypeCreateDtoToNotificationType(NotificationTypeCreateDto notificationTypeCreateDto)
+    {
+        NotificationType notificationType=new NotificationType();
+        notificationType.setNameOfClass(notificationTypeCreateDto.getNameOfClass());
+        notificationType.setName(notificationTypeCreateDto.isName());
+        notificationType.setLastName(notificationTypeCreateDto.isLastName());
+        notificationType.setLink(notificationTypeCreateDto.isLink());
+        notificationType.setIdVehicle(notificationTypeCreateDto.isIdVehicle());
+        notificationType.setModel(notificationTypeCreateDto.isModel());
+        notificationType.setTypeOfVehicle(notificationTypeCreateDto.isTypeOfVehicle());
+        notificationType.setDateFrom(notificationTypeCreateDto.isDateFrom());
+        notificationType.setDateTo(notificationTypeCreateDto.isDateTo());
+        notificationType.setEmailOfManager(notificationTypeCreateDto.isEmailOfManager());
+        notificationType.setText(notificationTypeCreateDto.getText());
+        notificationType.setPassword(notificationTypeCreateDto.isPassword());
+        return notificationType;
+    }
+
+
 
 }
